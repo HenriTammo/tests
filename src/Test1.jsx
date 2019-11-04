@@ -18,6 +18,12 @@ const ITEMS = [
 ];
 
 const Test1 = () => {
+  let phones = [];
+  let sum = 0;
+  ITEMS.forEach(item => {
+    phones.push(<div>Name: {item.name} | Price: {item.price}</div>);
+    sum += item.price;
+  });
   return (
     <div>
       <div className={"description"}>
@@ -31,9 +37,9 @@ const Test1 = () => {
         <img style={{width: 200}} src={test1Example}/>
       </div>
       <div>
-        [replace me]
+      {phones}
       </div>
-      <div><span className={"bold"}>Summa kokku:</span> [replace me]</div>
+      <div><span className={"bold"}>Summa kokku:</span> {sum}</div>
     </div>
   );
 };
